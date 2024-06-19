@@ -18,11 +18,12 @@ class LivenessCam {
         return null;
       }
       else if (Platform.isIOS) {
-        var result = await Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const CameraPage()));
-        if (result != null) {
-          return result as File;
-        }
+        // var result = await Navigator.push(context,
+        //     MaterialPageRoute(builder: (context) => const CameraPage()));
+        // if (result != null) {
+        //   return result as File;
+        // }
+        return null;
       }
       else {
         return null;
