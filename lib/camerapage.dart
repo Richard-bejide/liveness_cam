@@ -20,19 +20,19 @@ class _CameraPageState extends State<CameraPage> {
             Navigator.of(context).pop(image);
           }, messageBuilder: (context, face) {
             if (face == null) {
-              return _message('Tempatkan wajah anda pada kamera');
+              return _message('Place your face at the camera');
             }
             if (!face.wellPositioned) {
-              return _message('Posisikan wajah anda dengan baik');
+              return _message('Position your face well');
             }
             // if (!face.isMouthOpen) {
-            //   return _message('Buka dan tutup mulut anda');
+            //   return _message('Open and close your mouth');
             // }
-            // if (!face.isBlinking) {
-            //   return _message('Kedipkan kedua mata anda');
-            // }
+            if (!face.isBlinking) {
+              return _message('Blink your eyes');
+            }
             if (!face.isSmiling) {
-              return _message('Silahkan senyum');
+              return _message('Please smile');
             }
             return const SizedBox.shrink();
           });
@@ -44,7 +44,7 @@ class _CameraPageState extends State<CameraPage> {
               appBar: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: 0,
-                title: const Text(''),
+                title: const Text('Liveness Check'),
               )),
         )
       ],
@@ -60,7 +60,7 @@ class _CameraPageState extends State<CameraPage> {
         child: Text(msg,
             textAlign: TextAlign.center,
             style: const TextStyle(
-                fontSize: 18,
+                fontSize: 15,
                 height: 1.5,
                 fontWeight: FontWeight.w400,
                 color: Colors.white)),
