@@ -22,9 +22,9 @@ class _CameraPageState extends State<CameraPage> {
             if (face == null) {
               return _message('Place your face at the camera');
             }
-            if (!face.wellPositioned) {
-              return _message('Position your face well');
-            }
+            // if (!face.wellPositioned) {
+            //   return _message('Position your face well');
+            // }
             // if (!face.isMouthOpen) {
             //   return _message('Open and close your mouth');
             // }
